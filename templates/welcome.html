@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | HealthCare Smart Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='welcome.css') }}">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">🩺 HealthCare<span>Smart</span></div>
+    <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Your Health, Our Priority</h1>
+      <p>Discover smart AI-driven health analysis and predictions for a better and healthier life.</p>
+      <a href="{{ url_for('index') }}" class="btn btn-primary">Start Heart Risk Test</a>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>🫀 Heart Disease Predictor</h3>
+        <p>Predict your heart disease risk level instantly using AI and health metrics.</p>
+      </div>
+      <div class="service-card">
+        <h3>🥗 Nutrition Guidance</h3>
+        <p>Personalized meal and diet recommendations to keep your heart healthy.</p>
+      </div>
+      <div class="service-card">
+        <h3>🏃 Fitness Tracker</h3>
+        <p>Monitor your daily activity and get exercise plans for optimal health.</p>
+      </div>
+      <div class="service-card">
+        <h3>🧘 Mental Wellness</h3>
+        <p>Assess stress levels and receive mindful practices to stay calm and focused.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>We are dedicated to using artificial intelligence and modern analytics to promote a healthier lifestyle. Our mission is to help you take control of your health with accurate predictions and actionable advice.</p>
+  </section>
+
+  <footer id="contact" class="footer">
+    <p>📧 Contact us: support@healthcaresmart.com | ☎️ +94 77 123 4567</p>
+    <p>© 2025 HealthCareSmart. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
