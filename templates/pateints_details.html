@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heart Disease Risk Level Predictor</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="main-header">
+      <div class="logo-area">
+        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966489.png" alt="Heart Logo" class="logo">
+        <h1>Heart Disease Risk Level Predictor</h1>
+      </div>
+      <p class="tagline">Your health, our priority. Get a quick risk assessment with accurate data.</p>
+    </header>
+
+    <main class="form-container">
+      <form action="http://127.0.0.1:5000/getresults" method="POST" class="form-card">
+        <h2>Patient Information</h2>
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender (1 = Male, 2 = Female)</label>
+          <input type="text" id="gender" name="gender" placeholder="Enter 1 or 2" required>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" placeholder="Enter your age" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tc">Total Cholesterol (mg/dL)</label>
+          <input type="number" id="tc" name="tc" placeholder="e.g. 180" required>
+        </div>
+
+        <div class="form-group">
+          <label for="hdl">HDL (mg/dL)</label>
+          <input type="number" id="hdl" name="hdl" placeholder="e.g. 50" required>
+        </div>
+
+        <div class="form-group">
+          <label for="sbp">Systolic Blood Pressure (mmHg)</label>
+          <input type="number" id="sbp" name="sbp" placeholder="e.g. 120" required>
+        </div>
+
+        <div class="form-group">
+          <label for="smoke">Smoking Status (1 = Yes, 2 = No)</label>
+          <input type="text" id="smoke" name="smoke" placeholder="Enter 1 or 2" required>
+        </div>
+
+        <div class="form-group">
+          <label for="bpm">Blood Pressure Medication (1 = Yes, 2 = No)</label>
+          <input type="text" id="bpm" name="bpm" placeholder="Enter 1 or 2" required>
+        </div>
+
+        <div class="form-group">
+          <label for="diab">Diabetes (1 = Yes, 2 = No)</label>
+          <input type="text" id="diab" name="diab" placeholder="Enter 1 or 2" required>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Details</button>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 HealthPredict AI | Designed with ❤️ for better healthcare</p>
+    </footer>
+  </div>
+</body>
+</html>

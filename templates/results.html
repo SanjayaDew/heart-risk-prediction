@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heart Risk Result</title>
+  <link rel="stylesheet" href="results.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="result-container">
+    <header class="result-header">
+      <img src="https://cdn-icons-png.flaticon.com/512/2966/2966489.png" alt="Heart Icon" class="icon" />
+      <h1>Heart Disease Risk Report</h1>
+    </header>
+
+    <section class="result-card">
+      <h2>Hello, <span class="username">{{results.name}}</span></h2>
+      <p class="risk-label">Predicted Heart Disease Risk:</p>
+      <p class="risk-value" id="riskValue">{{results.risk}}%</p>
+
+      <div id="advice-section" class="advice-section">
+        <!-- Dynamic advice inserted via JS -->
+      </div>
+
+      <div class="button-group">
+        <button class="btn primary" id="downloadBtn">⬇️ Download Report</button>
+        <button class="btn secondary" onclick="window.location.href='/'">↩️ Recheck Details</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 HealthPredict AI | Designed with ❤️ for better healthcare</p>
+    </footer>
+  </div>
+
+  <script>
+    // Risk-based advice logic
+    const risk = parseFloat('{{results.risk}}');
+    const adviceSection = document.getElementById('advice-section');
+    const riskValue = document.getElementById('riskValue');
+
+    if (!isNaN(risk)) {
+      let adviceHTML = '';
+
+      if (risk < 30) {
+        riskValue.style.color = '#2e7d32'; // Green
+        adviceHTML = `
+          <h3>🟢 Low Risk — Great Job!</h3>
+          <p>Your heart health is good. Keep maintaining these habits:</p>
+          <ul>
+            <li>Eat a balanced diet rich in fruits, vegetables, and whole grains.</li>
+            <li>Do light exercise 30 minutes daily (walking, yoga).</li>
+            <li>Avoid smoking and manage stress through relaxation.</li>
+          </ul>
+        `;
+      } else if (risk < 70) {
+        riskValue.style.color = '#f9a825'; // Yellow
+        adviceHTML = `
+          <h3>🟡 Moderate Risk — Take Precautions</h3>
+          <p>You can improve your heart health with these changes:</p>
+          <ul>
+            <li>Eat heart-friendly foods (oats, nuts, fish, olive oil).</li>
+            <li>Exercise regularly (jogging, cycling, swimming).</li>
+            <li>Limit salt, sugar, and processed foods.</li>
+            <li>Check blood pressure and cholesterol regularly.</li>
+          </ul>
+        `;
+      } else {
+        riskValue.style.color = '#d32f2f'; // Red
+        adviceHTML = `
+          <h3>🔴 High Risk — Consult a Doctor</h3>
+          <p>Your heart risk is high. Please take medical guidance seriously.</p>
+          <ul>
+            <li>Follow a low-fat, high-fiber diet.</li>
+            <li>Avoid smoking, alcohol, and fried foods.</li>
+            <li>Exercise under medical supervision (light walks, stretches).</li>
+            <li>Regularly monitor BP, sugar, and cholesterol.</li>
+          </ul>
+        `;
+      }
+      adviceSection.innerHTML = adviceHTML;
+    }
+
+    // Placeholder download handler
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      alert('Download feature coming soon! (You can generate PDF in backend)');
+    });
+  </script>
+</body>
+</html>
